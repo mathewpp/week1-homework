@@ -1,6 +1,7 @@
 # Activate some helpful built-in Ruby libraries
 require 'open-uri'
 require 'json'
+require 'pp'
 
 # Our classroom location
 location = "5555 South Ellis Avenue, Chicago, Illinois, 60637"
@@ -18,8 +19,11 @@ data = JSON.parse(json_data)
 # 1. TO DO:
 # Replace the following 0's with expressions
 # that will extract the latitude and longitude
-latitude = 0
-longitude = 0
+
+#pp data (this does pretty print for seeing the data)
+latitude  = data["results"][0]["geometry"]["location"]["lat"]
+longitude = data["results"][0]["geometry"]["location"]["lng"]
+
 
 # Output latitude and longitude to the screen
 puts "Latitude: #{latitude}"
